@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRise Lite", "InstamRise Lite\InstamRise Lite.csproj", "{2EA2A608-0124-4C96-BA1D-3509E029DFFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F801BE1-C766-49BA-83D4-46819480E1A6}
+	EndGlobalSection
+EndGlobal

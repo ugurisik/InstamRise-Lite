@@ -1,0 +1,9 @@
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstamRise Lite.exe.config
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstamRise Lite.exe
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstamRise Lite.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.csprojAssemblyReference.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.Properties.Resources.resources
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.csproj.GenerateResource.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.csproj.CoreCompileInputs.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.exe
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.pdb
