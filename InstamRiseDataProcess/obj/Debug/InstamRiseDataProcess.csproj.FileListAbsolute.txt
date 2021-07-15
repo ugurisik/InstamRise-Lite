@@ -1,0 +1,12 @@
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\InstamRiseDataProcess.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\InstamRiseDataProcess.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\InstagramApiSharp.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\obj\Debug\InstamRiseDataProcess.csprojAssemblyReference.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\obj\Debug\InstamRiseDataProcess.csproj.CoreCompileInputs.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\obj\Debug\InstamRiseDataProcess.csproj.CopyComplete
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\obj\Debug\InstamRiseDataProcess.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseDataProcess\obj\Debug\InstamRiseDataProcess.pdb

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using InstamRiseDataProcess.Models;
+using InstamRiseDataProcess.DataProcess;
+using InstamRise_Lite.ApiProcess;
 namespace InstamRise_Lite.UserInterface
 {
     public partial class ContentPage : UserControl
@@ -16,6 +18,13 @@ namespace InstamRise_Lite.UserInterface
         {
             InitializeComponent();
             panel1.Location = new Point(0, 0);
+            LoginAcc loginAcc = new LoginAcc();
+            loginAcc.LoadUsers(cmbUsers);
+            //InstaProfile i = await ProfileDataProcess.ProfileInfo(firstApi, "ali");
+            //if (i.ExceptionStatus == null)
+            //{
+
+            //}
         }
 
         private void VScrollBar_Scroll(object sender, ScrollEventArgs e)
@@ -47,6 +56,24 @@ namespace InstamRise_Lite.UserInterface
             else
             {
                 txtListContent.PlaceholderText = "";
+            }
+        }
+
+        private async void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text))
+            {
+                LoginAcc loginAcc = new LoginAcc();
+                ExceptionStatus exception = await loginAcc.MultiLogin(txtUsername.Text, txtPassword.Text, cmbUsers);
+                if (exception.Exception == "BadPassword")
+                {
+                    MessageBox.Show("Şifreniz ya da kullanıcı adınız hatalı");
+                }
+                else if (exception.Exception == "Success")
+                {
+                    MessageBox.Show("Başarıyla giriş yapıldı");
+                }
+               
             }
         }
     }

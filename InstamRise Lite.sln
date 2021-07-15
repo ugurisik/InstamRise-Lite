@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRise Lite", "InstamRise Lite\InstamRise Lite.csproj", "{2EA2A608-0124-4C96-BA1D-3509E029DFFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRiseDataProcess", "InstamRiseDataProcess\InstamRiseDataProcess.csproj", "{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA2A608-0124-4C96-BA1D-3509E029DFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,3 +12,10 @@ C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise L
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.Main.resources
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.UserInterface.LicencePage.resources
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.UserInterface.ContentPage.resources
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstagramApiSharp.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstamRiseDataProcess.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\Newtonsoft.Json.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\InstamRiseDataProcess.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\Newtonsoft.Json.xml

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace InstamRise_Lite
 {
     public partial class Main : Form
     {
+        public const string AccountPathDirectory = @"C:\InstamRise\Lite\Hesaplar";
+
         public static Guna.UI2.WinForms.Guna2Panel panel;
         public Main()
         {
@@ -27,6 +30,8 @@ namespace InstamRise_Lite
                 LicencePage licencePage = new LicencePage();
                 new ChangeContainerPanel(licencePage, panel);
             }
+            if (!Directory.Exists(AccountPathDirectory))
+                Directory.CreateDirectory(AccountPathDirectory);
         }
 
         private void lblClose_Click(object sender, EventArgs e)
