@@ -12,6 +12,7 @@ using InstamRiseDataProcess.DataProcess;
 using InstamRise_Lite.ApiProcess;
 using static InstamRise_Lite.ApiProcess.MultipleAcc;
 using InstagramApiSharp.API;
+using System.Threading;
 
 namespace InstamRise_Lite.UserInterface
 {
@@ -94,14 +95,33 @@ namespace InstamRise_Lite.UserInterface
         {
             if (cmbUsers.SelectedIndex != -1)
             {
-                List<InstaProfile> ınstaProfiles = await UserDataProcess.Following(instaApi, cmbUsers.SelectedItem.ToString());
-
+                await UnFollowUser();
             }
             else {
                 MessageBox.Show("İşlem yapılacak hesap seçiniz");
             }
            
             
+        }
+        public async Task UnFollowUser() {
+            int count = 0;
+            Random random = new Random();
+            List<InstaProfile> ınstaProfiles = await UserDataProcess.Following(instaApi, cmbUsers.SelectedItem.ToString());
+            foreach (var item in ınstaProfiles)
+            {
+                int rndDelay = random.Next((Convert.ToInt32(numberUnFollowTime.Value)) / 4 * 3, (Convert.ToInt32(numberUnFollowTime.Value)) * 2);
+                await Task.Delay(rndDelay*1000);
+                if (await UserDataProcess.UnFollowUsers(instaApi, item.UserID))
+                {
+                    count++;
+                    lblUnFollowCount.Text = "Çıkarılan Kullanıcı Sayısı : " + count;
+                    lblUnFollowUser.Text = "Çıkarılan Kullanıcı : " + item.UserName;
+                }else {
+                    lblUnFollowUser.Text = "Kullanıcı Çıkarılamadı : " + item.UserName;
+                }
+               
+
+            }
         }
     }
 }

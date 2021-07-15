@@ -29,12 +29,12 @@ namespace InstamRiseDataProcess.DataProcess
                 return false;
             }
         }
-        public static async Task<bool> UnFollowUsers(IInstaApi api, string UserName)
+        public static async Task<bool> UnFollowUsers(IInstaApi api, long UserID)
         {
             try
             {
-                var getuserID = await api.UserProcessor.GetUserAsync(UserName);
-                var user = await api.UserProcessor.UnFollowUserAsync(getuserID.Value.Pk);
+               
+                var user = await api.UserProcessor.UnFollowUserAsync(UserID);
                 if (!user.Succeeded)
                 {
                     return false;
@@ -67,7 +67,7 @@ namespace InstamRiseDataProcess.DataProcess
             try
             {
                 List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
-                var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(5));
+                var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(1));
                 if (followerList.Succeeded)
                 {
                     int count = 0;
