@@ -5,6 +5,7 @@ using InstagramApiSharp.Classes.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace InstamRiseDataProcess.DataProcess
 {
@@ -24,13 +25,14 @@ namespace InstamRiseDataProcess.DataProcess
                     ınstaProfile.UserID = likers.Pk;
                     ınstaProfile.UserName = likers.UserName;
                     ınstaProfile.Priv = likers.IsPrivate;
-
+                    ınstaProfiles.Add(ınstaProfile);
                     count++;
-                    if (count > 5000)
+                    if (count > 100)
                     {
                         break;
                     }
                 }
+                ınstaProfiles = ınstaProfiles.OrderBy(a => Guid.NewGuid()).ToList();
                 return ınstaProfiles;
             }
             catch (Exception)

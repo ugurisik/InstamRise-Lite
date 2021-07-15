@@ -29,9 +29,9 @@ namespace InstamRise_Lite.UserInterface
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox5 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -49,6 +49,7 @@ namespace InstamRise_Lite.UserInterface
             this.btnDownload = new Guna.UI2.WinForms.Guna2Button();
             this.txtDownloadUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblUnFollowUser = new System.Windows.Forms.Label();
             this.btnUnFollow = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numberUnFollowTime = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -63,13 +64,13 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.cmbGetListType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGetList = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtListContent = new Guna.UI2.WinForms.Guna2TextBox();
             this.numberFollowTime = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.lblGetListCount = new System.Windows.Forms.Label();
             this.cbFollowPrivateAcc = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.lblUnFollowUser = new System.Windows.Forms.Label();
+            this.lblFollowUser = new System.Windows.Forms.Label();
+            this.lblFollowCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2GroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -103,14 +104,13 @@ namespace InstamRise_Lite.UserInterface
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.AutoScrollMinSize = new System.Drawing.Size(5, -200);
+            this.panel1.AutoScrollMinSize = new System.Drawing.Size(5, -500);
             this.panel1.Controls.Add(this.guna2GroupBox5);
             this.panel1.Controls.Add(this.guna2GroupBox4);
             this.panel1.Controls.Add(this.guna2GroupBox3);
             this.panel1.Controls.Add(this.guna2GroupBox2);
             this.panel1.Controls.Add(this.guna2GroupBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, -100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 1250);
             this.panel1.TabIndex = 2;
@@ -133,7 +133,7 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox5.FillColor = System.Drawing.Color.Silver;
             this.guna2GroupBox5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2GroupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.guna2GroupBox5.Location = new System.Drawing.Point(4, 838);
+            this.guna2GroupBox5.Location = new System.Drawing.Point(4, 853);
             this.guna2GroupBox5.Name = "guna2GroupBox5";
             this.guna2GroupBox5.ShadowDecoration.Parent = this.guna2GroupBox5;
             this.guna2GroupBox5.Size = new System.Drawing.Size(457, 409);
@@ -178,30 +178,30 @@ namespace InstamRise_Lite.UserInterface
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(6, 205);
@@ -365,7 +365,7 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox4.FillColor = System.Drawing.Color.Silver;
             this.guna2GroupBox4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(4, 664);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(4, 679);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.ShadowDecoration.Parent = this.guna2GroupBox4;
             this.guna2GroupBox4.Size = new System.Drawing.Size(457, 167);
@@ -460,7 +460,7 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Silver;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(4, 514);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(4, 529);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
             this.guna2GroupBox3.Size = new System.Drawing.Size(457, 144);
@@ -468,6 +468,16 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox3.Text = "Takipten Çıkma İşlemleri";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GroupBox3.TextOffset = new System.Drawing.Point(0, -5);
+            // 
+            // lblUnFollowUser
+            // 
+            this.lblUnFollowUser.AutoSize = true;
+            this.lblUnFollowUser.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUnFollowUser.ForeColor = System.Drawing.Color.Teal;
+            this.lblUnFollowUser.Location = new System.Drawing.Point(4, 119);
+            this.lblUnFollowUser.Name = "lblUnFollowUser";
+            this.lblUnFollowUser.Size = new System.Drawing.Size(0, 16);
+            this.lblUnFollowUser.TabIndex = 12;
             // 
             // btnUnFollow
             // 
@@ -701,9 +711,10 @@ namespace InstamRise_Lite.UserInterface
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
             this.guna2GroupBox1.BorderRadius = 15;
+            this.guna2GroupBox1.Controls.Add(this.lblFollowUser);
             this.guna2GroupBox1.Controls.Add(this.cmbGetListType);
+            this.guna2GroupBox1.Controls.Add(this.lblFollowCount);
             this.guna2GroupBox1.Controls.Add(this.btnFollow);
-            this.guna2GroupBox1.Controls.Add(this.btnGetList);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.txtListContent);
             this.guna2GroupBox1.Controls.Add(this.numberFollowTime);
@@ -717,7 +728,7 @@ namespace InstamRise_Lite.UserInterface
             this.guna2GroupBox1.Location = new System.Drawing.Point(4, 251);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(457, 257);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(457, 272);
             this.guna2GroupBox1.TabIndex = 11;
             this.guna2GroupBox1.Text = "Takip Etme İşlemleri";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -765,23 +776,7 @@ namespace InstamRise_Lite.UserInterface
             this.btnFollow.Size = new System.Drawing.Size(448, 36);
             this.btnFollow.TabIndex = 9;
             this.btnFollow.Text = "Takip İşlemini Başlat";
-            // 
-            // btnGetList
-            // 
-            this.btnGetList.Animated = true;
-            this.btnGetList.BorderRadius = 8;
-            this.btnGetList.CheckedState.Parent = this.btnGetList;
-            this.btnGetList.CustomImages.Parent = this.btnGetList;
-            this.btnGetList.FillColor = System.Drawing.Color.Teal;
-            this.btnGetList.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.btnGetList.HoverState.Parent = this.btnGetList;
-            this.btnGetList.Location = new System.Drawing.Point(283, 78);
-            this.btnGetList.Name = "btnGetList";
-            this.btnGetList.ShadowDecoration.Parent = this.btnGetList;
-            this.btnGetList.Size = new System.Drawing.Size(171, 36);
-            this.btnGetList.TabIndex = 6;
-            this.btnGetList.Text = "Getir";
+            this.btnFollow.Click += new System.EventHandler(this.btnFollow_Click);
             // 
             // label3
             // 
@@ -821,7 +816,7 @@ namespace InstamRise_Lite.UserInterface
             this.txtListContent.PlaceholderText = "";
             this.txtListContent.SelectedText = "";
             this.txtListContent.ShadowDecoration.Parent = this.txtListContent;
-            this.txtListContent.Size = new System.Drawing.Size(273, 36);
+            this.txtListContent.Size = new System.Drawing.Size(451, 36);
             this.txtListContent.TabIndex = 5;
             // 
             // numberFollowTime
@@ -898,15 +893,26 @@ namespace InstamRise_Lite.UserInterface
             this.cbFollowPrivateAcc.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cbFollowPrivateAcc.UseVisualStyleBackColor = true;
             // 
-            // lblUnFollowUser
+            // lblFollowUser
             // 
-            this.lblUnFollowUser.AutoSize = true;
-            this.lblUnFollowUser.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUnFollowUser.ForeColor = System.Drawing.Color.Teal;
-            this.lblUnFollowUser.Location = new System.Drawing.Point(4, 119);
-            this.lblUnFollowUser.Name = "lblUnFollowUser";
-            this.lblUnFollowUser.Size = new System.Drawing.Size(0, 16);
-            this.lblUnFollowUser.TabIndex = 12;
+            this.lblFollowUser.AutoSize = true;
+            this.lblFollowUser.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFollowUser.ForeColor = System.Drawing.Color.Teal;
+            this.lblFollowUser.Location = new System.Drawing.Point(10, 248);
+            this.lblFollowUser.Name = "lblFollowUser";
+            this.lblFollowUser.Size = new System.Drawing.Size(0, 16);
+            this.lblFollowUser.TabIndex = 14;
+            // 
+            // lblFollowCount
+            // 
+            this.lblFollowCount.AutoSize = true;
+            this.lblFollowCount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFollowCount.ForeColor = System.Drawing.Color.Teal;
+            this.lblFollowCount.Location = new System.Drawing.Point(258, 248);
+            this.lblFollowCount.Name = "lblFollowCount";
+            this.lblFollowCount.Size = new System.Drawing.Size(181, 16);
+            this.lblFollowCount.TabIndex = 13;
+            this.lblFollowCount.Text = "Takip Edilen Kullanıcı Sayısı : 0";
             // 
             // ContentPage
             // 
@@ -941,7 +947,6 @@ namespace InstamRise_Lite.UserInterface
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblGetListCount;
         private Guna.UI2.WinForms.Guna2TextBox txtListContent;
-        private Guna.UI2.WinForms.Guna2Button btnGetList;
         private Guna.UI2.WinForms.Guna2ComboBox cmbGetListType;
         private Guna.UI2.WinForms.Guna2CheckBox cbFollowPrivateAcc;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
@@ -975,5 +980,7 @@ namespace InstamRise_Lite.UserInterface
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.Label lblUnFollowUser;
+        private System.Windows.Forms.Label lblFollowUser;
+        private System.Windows.Forms.Label lblFollowCount;
     }
 }

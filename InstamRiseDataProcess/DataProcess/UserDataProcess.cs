@@ -4,6 +4,7 @@ using InstagramApiSharp.Classes.Models;
 using InstamRiseDataProcess.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InstamRiseDataProcess.DataProcess
@@ -80,7 +81,7 @@ namespace InstamRiseDataProcess.DataProcess
 
                         ınstaProfiles.Add(ınstaProfile);
                         count++;
-                        if (count > 5000)
+                        if (count > 100)
                         {
                             break;
                         }
@@ -98,6 +99,43 @@ namespace InstamRiseDataProcess.DataProcess
             }
 
         }
+        public static async Task<List<InstaProfile>> Followers(IInstaApi api, string UserName)
+        {
+            try
+            {
+                List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
+                var userID = await api.UserProcessor.GetUserInfoByUsernameAsync(UserName);
+                var followerList = await api.UserProcessor.GetUserFollowersByIdAsync(userID.Value.Pk, PaginationParameters.MaxPagesToLoad(5));
+                if (followerList.Succeeded)
+                {
+                    int count = 0;
+                    foreach (var followers in followerList.Value)
+                    {
+                        InstaProfile ınstaProfile = new InstaProfile();
+                        ınstaProfile.UserID = followers.Pk;
+                        ınstaProfile.UserName = followers.UserName;
+                        ınstaProfile.Priv = followers.IsPrivate;
+                        ınstaProfiles.Add(ınstaProfile);
+                        count++;
+                        if (count > 100)
+                        {
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    return null;
+                }
 
+                ınstaProfiles = ınstaProfiles.OrderBy(a => Guid.NewGuid()).ToList();
+                return ınstaProfiles;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
     }
 }
