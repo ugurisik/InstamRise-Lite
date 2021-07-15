@@ -10,12 +10,20 @@ namespace InstamRiseDataProcess.DataProcess
 {
     public class StoryDataProcess
     {
-        public static async Task<bool> UploadStory(IInstaApi api, Uri URL)
+        public static async Task<bool> UploadStory(IInstaApi api, string URL)
         {
             try
             {
-                var image = new InstaImage { Uri = URL.ToString() };
-                return true;
+                var image = new InstaImage { Uri = URL };
+                var uploadStory = await api.StoryProcessor.UploadStoryPhotoAsync(image, "");
+                if (uploadStory.Succeeded)
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+               
             }
             catch (Exception)
             {

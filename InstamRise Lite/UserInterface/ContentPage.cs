@@ -288,10 +288,13 @@ namespace InstamRise_Lite.UserInterface
             }
         }
 
+        public async Task PostStory() { 
+        
+        }
         public string ChoisePicture() {
             string returnPath = "";
             OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "JPG Dosyaları (*.jpg)|*.jpg";//|MP4 Dosyaları (*.mp4)|*.mp4
+            file.Filter = "JPG Dosyaları (*.jpg)|*.jpg";
             file.FilterIndex = 1;
             file.RestoreDirectory = true;
             file.CheckFileExists = false;
