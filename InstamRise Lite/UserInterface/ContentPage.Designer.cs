@@ -633,6 +633,7 @@ namespace InstamRise_Lite.UserInterface
             this.cmbUsers.ShadowDecoration.Parent = this.cmbUsers;
             this.cmbUsers.Size = new System.Drawing.Size(451, 36);
             this.cmbUsers.TabIndex = 0;
+            this.cmbUsers.SelectedIndexChanged += new System.EventHandler(this.cmbUsers_SelectedIndexChanged);
             // 
             // btnLogin
             // 

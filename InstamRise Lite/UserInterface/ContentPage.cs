@@ -10,10 +10,15 @@ using System.Windows.Forms;
 using InstamRiseDataProcess.Models;
 using InstamRiseDataProcess.DataProcess;
 using InstamRise_Lite.ApiProcess;
+using static InstamRise_Lite.ApiProcess.MultipleAcc;
+using InstagramApiSharp.API;
+
 namespace InstamRise_Lite.UserInterface
 {
     public partial class ContentPage : UserControl
     {
+        public static IInstaApi instaApi;
+        string CurrentUserName=null;
         public ContentPage()
         {
             InitializeComponent();
@@ -25,6 +30,7 @@ namespace InstamRise_Lite.UserInterface
             //{
 
             //}
+            
         }
 
         private void VScrollBar_Scroll(object sender, ScrollEventArgs e)
@@ -75,6 +81,12 @@ namespace InstamRise_Lite.UserInterface
                 }
                
             }
+        }
+
+        private void cmbUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentUserName = cmbUsers.SelectedItem.ToString();
+            instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName);
         }
     }
 }

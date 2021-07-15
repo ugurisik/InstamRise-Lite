@@ -39,21 +39,6 @@ namespace InstamRiseDataProcess.DataProcess
             }
         }
 
-        public static async Task<List<InstaMedia>> Media(IInstaApi api, string getMediaTypesText)
-        {
-            try
-            {
-                var getMediaInfo = await api.UserProcessor.GetUserMediaAsync(getMediaTypesText, PaginationParameters.MaxPagesToLoad(5));
-                if (getMediaInfo.Succeeded)
-                {
-                    return getMediaInfo.Value;
-                }
-                return null;
-            }
-            catch
-            {
-                return null;
-            }
-        }
+     
     }
 }

@@ -1,4 +1,7 @@
-﻿using InstagramApiSharp.API;
+﻿using InstagramApiSharp;
+using InstagramApiSharp.API;
+using InstagramApiSharp.Classes.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace InstamRiseDataProcess.DataProcess
@@ -39,6 +42,22 @@ namespace InstamRiseDataProcess.DataProcess
             catch
             {
                 return false;
+            }
+        }
+        public static async Task<List<InstaMedia>> Media(IInstaApi api, string getMediaTypesText)
+        {
+            try
+            {
+                var getMediaInfo = await api.UserProcessor.GetUserMediaAsync(getMediaTypesText, PaginationParameters.MaxPagesToLoad(5));
+                if (getMediaInfo.Succeeded)
+                {
+                    return getMediaInfo.Value;
+                }
+                return null;
+            }
+            catch
+            {
+                return null;
             }
         }
     }
