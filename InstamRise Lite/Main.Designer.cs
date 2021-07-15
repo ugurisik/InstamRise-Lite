@@ -32,13 +32,13 @@ namespace InstamRise_Lite
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblClose = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblClose = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,50 +61,6 @@ namespace InstamRise_Lite
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(514, 52);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this.guna2CustomGradientPanel1;
-            // 
-            // pnlContainer
-            // 
-            this.pnlContainer.Location = new System.Drawing.Point(12, 58);
-            this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.ShadowDecoration.Parent = this.pnlContainer;
-            this.pnlContainer.Size = new System.Drawing.Size(490, 653);
-            this.pnlContainer.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 30;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(155, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 33);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "InstamRise Lite";
-            // 
-            // guna2DragControl2
-            // 
-            this.guna2DragControl2.TargetControl = this.label3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::InstamRise_Lite.Properties.Resources.r10;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblClose
             // 
             this.lblClose.AutoSize = true;
@@ -118,6 +74,50 @@ namespace InstamRise_Lite
             this.lblClose.TabIndex = 12;
             this.lblClose.Text = "X";
             this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::InstamRise_Lite.Properties.Resources.r10;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(155, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 33);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "InstamRise Lite";
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this.guna2CustomGradientPanel1;
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Location = new System.Drawing.Point(12, 58);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.ShadowDecoration.Parent = this.pnlContainer;
+            this.pnlContainer.Size = new System.Drawing.Size(499, 653);
+            this.pnlContainer.TabIndex = 1;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2DragControl2
+            // 
+            this.guna2DragControl2.TargetControl = this.label3;
             // 
             // Main
             // 

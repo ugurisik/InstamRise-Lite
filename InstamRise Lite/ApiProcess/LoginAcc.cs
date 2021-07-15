@@ -52,7 +52,11 @@ namespace InstamRise_Lite.ApiProcess
             LoadSessions();
             await Task.Delay(1500);
             cmbUsers.DataSource = LoggedInUsers;
-            cmbUsers.SelectedIndex = 0;
+            if (cmbUsers.Items.Count>0)
+            {
+                cmbUsers.SelectedIndex = 0;
+            }
+           
         }
     }
 }

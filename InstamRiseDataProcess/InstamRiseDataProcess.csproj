@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="DataProcess\MediaDataProcess.cs" />
     <Compile Include="DataProcess\ProfileDataProcess.cs" />
+    <Compile Include="DataProcess\StoryDataProcess.cs" />
     <Compile Include="DataProcess\UserDataProcess.cs" />
     <Compile Include="Models\ExceptionStatus.cs" />
     <Compile Include="Models\InstaProfileInfo.cs" />

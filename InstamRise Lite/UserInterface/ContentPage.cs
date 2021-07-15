@@ -14,6 +14,8 @@ using static InstamRise_Lite.ApiProcess.MultipleAcc;
 using InstagramApiSharp.API;
 using System.Threading;
 using InstagramApiSharp.Classes.Models;
+using System.IO;
+using System.Net;
 
 namespace InstamRise_Lite.UserInterface
 {
@@ -21,6 +23,7 @@ namespace InstamRise_Lite.UserInterface
     {
         public static IInstaApi instaApi;
         string CurrentUserName=null;
+        public string MediaPathDirectory = @"C:\InstamRise\Lite\Indirilenler";
         public ContentPage()
         {
             InitializeComponent();
@@ -91,6 +94,12 @@ namespace InstamRise_Lite.UserInterface
             CurrentUserName = cmbUsers.SelectedItem.ToString();
             instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName.ToLower());
         }
+
+
+
+
+
+
 
         private async void btnUnFollow_Click(object sender, EventArgs e)
         {
@@ -190,16 +199,116 @@ namespace InstamRise_Lite.UserInterface
                 }
             }
         }
-
         public async Task GetMedia() {
 
-            List<InstaMedia> ınstaMedias = await UserDataProcess.Media(instaApi,txtDownloadUsername.Text);
+            if (!Directory.Exists(MediaPathDirectory))
+                Directory.CreateDirectory(MediaPathDirectory);
+            bool isVideo = false;
+            List<string> vs = new List<string>();
+            string videoPath = "", imagePath = "";
 
-            foreach (var item in ınstaMedias)
+            List<InstaMedia> ınstaMedias = await UserDataProcess.Media(instaApi,txtDownloadUsername.Text);
+            videoPath = MediaPathDirectory + "\\" + txtDownloadUsername.Text + "\\Video";
+            imagePath = MediaPathDirectory + "\\" + txtDownloadUsername.Text + "\\Resim";
+            for (int i = 2; i < 50; i++)
             {
+                if (!Directory.Exists(videoPath))
+                {
+                    Directory.CreateDirectory(videoPath);
+                    break;
+                }
+                else
+                {
+                    videoPath = MediaPathDirectory + "\\" + txtDownloadUsername.Text + "_" + i + "_\\Video";
+                    imagePath = MediaPathDirectory + "\\" + txtDownloadUsername.Text + "_" + i + "_\\Resim";
+                    if (!Directory.Exists(videoPath))
+                    {
+                        Directory.CreateDirectory(videoPath);
+                        break;
+                    }
+                }
+            }
+            if (!Directory.Exists(imagePath))
+                Directory.CreateDirectory(imagePath);
+            int videoCount = 0, imageCount = 0;
+            foreach (var medias in ınstaMedias)
+            {
+
+                isVideo = false;
+                foreach (var item in medias.Videos)
+                {
+                    using (WebClient wcVideo = new WebClient())
+                    {
+                        wcVideo.DownloadFileAsync(
+                            new System.Uri(item.Uri), @"" + videoPath + @"\" + videoCount + "_Video.mp4"
+                        );
+
+                    }
+                    await Task.Delay(2);
+                    isVideo = true;
+                    break;
+                }
+
+
+                foreach (var item in medias.Images)
+                {
+                    if (isVideo)
+                    {
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFileAsync(new System.Uri(item.Uri), @"" + videoPath + @"\" + videoCount + "_VideoTumbnail.jpg");
+                        }
+                        addMediaCaptionforDownloadPosts(@"" + videoPath + @"\" + videoCount + "_Aciklama.txt", medias.Caption.Text);
+                        videoCount++;
+                    }
+                    else
+                    {
+                        using (WebClient wcImage = new WebClient())
+                        {
+                            wcImage.DownloadFileAsync(new System.Uri(item.Uri), @"" + imagePath + @"\" + imageCount + "_Resim.jpg");
+
+                        }
+                        addMediaCaptionforDownloadPosts(@"" + imagePath + @"\" + imageCount + "_Aciklama.txt", medias.Caption.Text);
+                        imageCount++;
+                    }
+                    break;
+                }
                 
+
             }
         }
+        public void addMediaCaptionforDownloadPosts(string path,string caption) {
+            
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine(caption);
+                }
+            }
+        }
+
+        public string ChoisePicture() {
+            string returnPath = "";
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "JPG Dosyaları (*.jpg)|*.jpg";//|MP4 Dosyaları (*.mp4)|*.mp4
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+            file.CheckFileExists = false;
+            file.Title = "Resim Seçiniz...";
+            file.Multiselect = false;
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                returnPath = file.FileName; 
+            }
+            return returnPath;
+        }
+
+
+
+
+
+
         private async void btnFollow_Click(object sender, EventArgs e)
         {
             if (cmbGetListType.SelectedIndex != -1)
