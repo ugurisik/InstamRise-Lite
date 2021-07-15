@@ -23,8 +23,8 @@ namespace InstamRise_Lite.UserInterface
         {
             InitializeComponent();
             panel1.Location = new Point(0, 0);
-            LoginAcc loginAcc = new LoginAcc();
-            loginAcc.LoadUsers(cmbUsers);
+            LoginAcc.LoadUsers(cmbUsers);
+
             //InstaProfile i = await ProfileDataProcess.ProfileInfo(firstApi, "ali");
             //if (i.ExceptionStatus == null)
             //{
@@ -69,8 +69,7 @@ namespace InstamRise_Lite.UserInterface
         {
             if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {
-                LoginAcc loginAcc = new LoginAcc();
-                ExceptionStatus exception = await loginAcc.MultiLogin(txtUsername.Text, txtPassword.Text, cmbUsers);
+                ExceptionStatus exception = await LoginAcc.MultiLogin(txtUsername.Text, txtPassword.Text, cmbUsers);
                 if (exception.Exception == "BadPassword")
                 {
                     MessageBox.Show("Şifreniz ya da kullanıcı adınız hatalı");
@@ -79,14 +78,22 @@ namespace InstamRise_Lite.UserInterface
                 {
                     MessageBox.Show("Başarıyla giriş yapıldı");
                 }
-               
+                else {
+                    MessageBox.Show(exception.Exception);
+                }
             }
         }
 
         private void cmbUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentUserName = cmbUsers.SelectedItem.ToString();
-            instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName);
+            instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName.ToLower());
+        }
+
+        private async void btnUnFollow_Click(object sender, EventArgs e)
+        {
+            List<InstaProfile> ınstaProfiles = await UserDataProcess.Following(instaApi,cmbUsers.SelectedItem.ToString());
+            
         }
     }
 }

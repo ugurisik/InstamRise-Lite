@@ -6,7 +6,7 @@ namespace InstamRise_Lite.ApiProcess
 {
     class LoginAcc
     {
-        public async Task<ExceptionStatus> MultiLogin(string username, string password, Guna.UI2.WinForms.Guna2ComboBox cmbUsers)
+        public static async Task<ExceptionStatus> MultiLogin(string username, string password, Guna.UI2.WinForms.Guna2ComboBox cmbUsers)
         {
             ExceptionStatus exceptionStatus = new ExceptionStatus();
             try
@@ -46,7 +46,7 @@ namespace InstamRise_Lite.ApiProcess
                 return exceptionStatus;
             }
         }
-        public async void LoadUsers(Guna.UI2.WinForms.Guna2ComboBox cmbUsers)
+        public static async void LoadUsers(Guna.UI2.WinForms.Guna2ComboBox cmbUsers)
         {
             cmbUsers.DataSource = null;
             LoadSessions();

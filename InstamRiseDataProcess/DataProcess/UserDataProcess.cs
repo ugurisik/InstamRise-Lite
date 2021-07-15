@@ -1,6 +1,8 @@
 ﻿using InstagramApiSharp;
 using InstagramApiSharp.API;
 using InstagramApiSharp.Classes.Models;
+using InstamRiseDataProcess.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -60,5 +62,42 @@ namespace InstamRiseDataProcess.DataProcess
                 return null;
             }
         }
+        public static async Task<List<InstaProfile>> Following(IInstaApi api, string UserName)
+        {
+            try
+            {
+                List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
+                var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(5));
+                if (followerList.Succeeded)
+                {
+                    int count = 0;
+                    foreach (var followers in followerList.Value)
+                    {
+                        InstaProfile ınstaProfile = new InstaProfile();
+                        ınstaProfile.UserID = followers.Pk;
+                        ınstaProfile.UserName = followers.UserName;
+                        ınstaProfile.Priv = followers.IsPrivate;
+
+                        ınstaProfiles.Add(ınstaProfile);
+                        count++;
+                        if (count > 5000)
+                        {
+                            break;
+                        }
+                    }
+                    return ınstaProfiles;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
     }
 }
