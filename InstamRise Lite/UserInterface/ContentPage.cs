@@ -13,6 +13,7 @@ using InstamRise_Lite.ApiProcess;
 using static InstamRise_Lite.ApiProcess.MultipleAcc;
 using InstagramApiSharp.API;
 using System.Threading;
+using InstagramApiSharp.Classes.Models;
 
 namespace InstamRise_Lite.UserInterface
 {
@@ -189,7 +190,16 @@ namespace InstamRise_Lite.UserInterface
                 }
             }
         }
-      
+
+        public async Task GetMedia() {
+
+            List<InstaMedia> ınstaMedias = await UserDataProcess.Media(instaApi,txtDownloadUsername.Text);
+
+            foreach (var item in ınstaMedias)
+            {
+                
+            }
+        }
         private async void btnFollow_Click(object sender, EventArgs e)
         {
             if (cmbGetListType.SelectedIndex != -1)
@@ -206,6 +216,24 @@ namespace InstamRise_Lite.UserInterface
             else
             {
                 MessageBox.Show("Lütfen takip edilecek liste türü seçiniz");
+            }
+        }
+
+        private async void btnDownload_Click(object sender, EventArgs e)
+        {
+            if (cmbDownloadType.SelectedIndex != -1)
+            {
+                if (!string.IsNullOrEmpty(txtDownloadUsername.Text))
+                {
+                   await GetMedia();
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen boş alanı doldurunuz");
+                }
+            }
+            else {
+                MessageBox.Show("Lütfen indirme türünü seçiniz");
             }
         }
     }
