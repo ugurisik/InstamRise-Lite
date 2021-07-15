@@ -29,13 +29,6 @@ namespace InstamRise_Lite.UserInterface
             InitializeComponent();
             panel1.Location = new Point(0, 0);
             LoginAcc.LoadUsers(cmbUsers);
-
-            //InstaProfile i = await ProfileDataProcess.ProfileInfo(firstApi, "ali");
-            //if (i.ExceptionStatus == null)
-            //{
-
-            //}
-            
         }
 
         private void VScrollBar_Scroll(object sender, ScrollEventArgs e)
@@ -94,13 +87,6 @@ namespace InstamRise_Lite.UserInterface
             CurrentUserName = cmbUsers.SelectedItem.ToString();
             instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName.ToLower());
         }
-
-
-
-
-
-
-
         private async void btnUnFollow_Click(object sender, EventArgs e)
         {
             if (cmbUsers.SelectedIndex != -1)
@@ -193,7 +179,7 @@ namespace InstamRise_Lite.UserInterface
                         }
                         else
                         {
-                            lblUnFollowUser.Text = "Kullanıcı Takip Edilemedi : " + item.UserName;
+                            lblFollowUser.Text = "Kullanıcı Takip Edilemedi : " + item.UserName;
                         }
                     }
                 }

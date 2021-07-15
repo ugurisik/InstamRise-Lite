@@ -18,6 +18,7 @@ namespace InstamRiseDataProcess.DataProcess
                 var user = await api.UserProcessor.FollowUserAsync(UserID);
                 if (user.Succeeded)
                 {
+                    
                     return true;
                 }
                 else
@@ -68,7 +69,7 @@ namespace InstamRiseDataProcess.DataProcess
             try
             {
                 List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
-                var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(1));
+                var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(10));
                 if (followerList.Succeeded)
                 {
                     int count = 0;
@@ -81,7 +82,7 @@ namespace InstamRiseDataProcess.DataProcess
 
                         ınstaProfiles.Add(ınstaProfile);
                         count++;
-                        if (count > 100)
+                        if (count > 1000)
                         {
                             break;
                         }

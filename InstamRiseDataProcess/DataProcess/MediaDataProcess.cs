@@ -27,7 +27,7 @@ namespace InstamRiseDataProcess.DataProcess
                     ınstaProfile.Priv = likers.IsPrivate;
                     ınstaProfiles.Add(ınstaProfile);
                     count++;
-                    if (count > 100)
+                    if (count > 1000)
                     {
                         break;
                     }
