@@ -92,7 +92,15 @@ namespace InstamRise_Lite.UserInterface
 
         private async void btnUnFollow_Click(object sender, EventArgs e)
         {
-            List<InstaProfile> ınstaProfiles = await UserDataProcess.Following(instaApi,cmbUsers.SelectedItem.ToString());
+            if (cmbUsers.SelectedIndex != -1)
+            {
+                List<InstaProfile> ınstaProfiles = await UserDataProcess.Following(instaApi, cmbUsers.SelectedItem.ToString());
+
+            }
+            else {
+                MessageBox.Show("İşlem yapılacak hesap seçiniz");
+            }
+           
             
         }
     }
