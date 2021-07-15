@@ -7,3 +7,8 @@ C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise L
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.csproj.CoreCompileInputs.cache
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.exe
 C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\bin\Debug\Guna.UI2.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise Lite.csproj.CopyComplete
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.Main.resources
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.UserInterface.LicencePage.resources
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRise Lite\obj\Debug\InstamRise_Lite.UserInterface.ContentPage.resources
