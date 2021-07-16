@@ -293,11 +293,6 @@ namespace InstamRise_Lite.UserInterface
             return returnPath;
         }
 
-
-
-
-
-
         private async void btnFollow_Click(object sender, EventArgs e)
         {
             if (cmbGetListType.SelectedIndex != -1)
