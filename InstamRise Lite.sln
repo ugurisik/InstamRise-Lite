@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRise Lite", "InstamRi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRiseDataProcess", "InstamRiseDataProcess\InstamRiseDataProcess.csproj", "{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRise", "InstamRise\InstamRise.csproj", "{B4DA73D2-00EC-4F95-8F0E-632098B02D8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyListDesign", "MyListDesign\MyListDesign.csproj", "{7C4BE052-549B-47A0-9FE8-C898298A5FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstamRiseDatabaseProcess", "InstamRiseDatabaseProcess\InstamRiseDatabaseProcess.csproj", "{6EDDA30C-D955-4EEE-8186-DDCB5416F3A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D00F952F-EA0D-463A-98CD-42E7EE00DFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DA73D2-00EC-4F95-8F0E-632098B02D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DA73D2-00EC-4F95-8F0E-632098B02D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DA73D2-00EC-4F95-8F0E-632098B02D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DA73D2-00EC-4F95-8F0E-632098B02D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4BE052-549B-47A0-9FE8-C898298A5FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4BE052-549B-47A0-9FE8-C898298A5FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4BE052-549B-47A0-9FE8-C898298A5FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4BE052-549B-47A0-9FE8-C898298A5FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDDA30C-D955-4EEE-8186-DDCB5416F3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDDA30C-D955-4EEE-8186-DDCB5416F3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDDA30C-D955-4EEE-8186-DDCB5416F3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDDA30C-D955-4EEE-8186-DDCB5416F3A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

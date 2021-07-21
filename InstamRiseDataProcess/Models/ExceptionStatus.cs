@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace InstamRiseDataProcess.Models
 {
-    public class ExceptionStatus
+    public static class ExceptionStatus
     {
-        public string Exception { get; set; }
+        public static string Exception { get; set; }
+        public static string ResponseType { get; set; }
     }
 }

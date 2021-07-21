@@ -1,0 +1,14 @@
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\obj\Debug\InstamRiseBusiness.csprojAssemblyReference.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\obj\Debug\InstamRiseBusiness.csproj.CoreCompileInputs.cache
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\InstamRiseBusiness.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\InstamRiseBusiness.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\InstagramApiSharp.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\InstamRiseDataProcess.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\Newtonsoft.Json.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\InstamRiseDataProcess.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\bin\Debug\Newtonsoft.Json.xml
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\obj\Debug\InstamRiseBusiness.csproj.CopyComplete
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\obj\Debug\InstamRiseBusiness.dll
+C:\Users\UGR\source\repos\InstamRise Lite\InstamRiseBusiness\obj\Debug\InstamRiseBusiness.pdb

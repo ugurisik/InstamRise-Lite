@@ -52,9 +52,11 @@ namespace InstamRiseDataProcess.DataProcess
         {
             try
             {
-                var getMediaInfo = await api.UserProcessor.GetUserMediaAsync(getMediaTypesText, PaginationParameters.MaxPagesToLoad(5));
+                var getMediaInfo = await api.UserProcessor.GetUserMediaAsync(getMediaTypesText, PaginationParameters.MaxPagesToLoad(10));
                 if (getMediaInfo.Succeeded)
                 {
+                    
+
                     return getMediaInfo.Value;
                 }
                 return null;
@@ -70,6 +72,8 @@ namespace InstamRiseDataProcess.DataProcess
             {
                 List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
                 var followerList = await api.UserProcessor.GetUserFollowingAsync(UserName, PaginationParameters.MaxPagesToLoad(10));
+                ExceptionStatus.Exception = followerList.Info.Message;
+                ExceptionStatus.ResponseType = followerList.Info.ResponseType.ToString();
                 if (followerList.Succeeded)
                 {
                     int count = 0;
@@ -87,7 +91,9 @@ namespace InstamRiseDataProcess.DataProcess
                             break;
                         }
                     }
+                    ınstaProfiles = ınstaProfiles.OrderBy(a => Guid.NewGuid()).ToList();
                     return ınstaProfiles;
+
                 }
                 else
                 {
@@ -96,6 +102,7 @@ namespace InstamRiseDataProcess.DataProcess
             }
             catch (Exception ex)
             {
+                ExceptionStatus.Exception = ex.Message;
                 return null;
             }
 
@@ -104,36 +111,49 @@ namespace InstamRiseDataProcess.DataProcess
         {
             try
             {
+                
                 List<InstaProfile> ınstaProfiles = new List<InstaProfile>();
                 var userID = await api.UserProcessor.GetUserInfoByUsernameAsync(UserName);
-                var followerList = await api.UserProcessor.GetUserFollowersByIdAsync(userID.Value.Pk, PaginationParameters.MaxPagesToLoad(5));
-                if (followerList.Succeeded)
+                if (userID.Succeeded)
                 {
-                    int count = 0;
-                    foreach (var followers in followerList.Value)
+                    var followerList = await api.UserProcessor.GetUserFollowersByIdAsync(userID.Value.Pk, PaginationParameters.MaxPagesToLoad(5));
+                    if (followerList.Succeeded)
                     {
-                        InstaProfile ınstaProfile = new InstaProfile();
-                        ınstaProfile.UserID = followers.Pk;
-                        ınstaProfile.UserName = followers.UserName;
-                        ınstaProfile.Priv = followers.IsPrivate;
-                        ınstaProfiles.Add(ınstaProfile);
-                        count++;
-                        if (count > 100)
+                        int count = 0;
+                        foreach (var followers in followerList.Value)
                         {
-                            break;
+                            InstaProfile ınstaProfile = new InstaProfile();
+                            ınstaProfile.UserID = followers.Pk;
+                            ınstaProfile.UserName = followers.UserName;
+                            ınstaProfile.Priv = followers.IsPrivate;
+                            ınstaProfiles.Add(ınstaProfile);
+                            count++;
+                            if (count > 100)
+                            {
+                                break;
+                            }
                         }
                     }
+                    else
+                    {
+                        ExceptionStatus.Exception = followerList.Info.Message;
+                        ExceptionStatus.ResponseType = followerList.Info.ResponseType.ToString();
+                        return null;
+                    }
                 }
-                else
-                {
+                else {
+                    ExceptionStatus.Exception = userID.Info.Message;
+                    ExceptionStatus.ResponseType = userID.Info.ResponseType.ToString();
                     return null;
                 }
+                
 
                 ınstaProfiles = ınstaProfiles.OrderBy(a => Guid.NewGuid()).ToList();
                 return ınstaProfiles;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ExceptionStatus.Exception = ex.Message;
                 return null;
             }
 

@@ -17,11 +17,15 @@ using InstagramApiSharp.Classes.Models;
 using System.IO;
 using System.Net;
 
+
 namespace InstamRise_Lite.UserInterface
 {
     public partial class ContentPage : UserControl
     {
         public static IInstaApi instaApi;
+
+
+       
         string CurrentUserName=null;
         public string MediaPathDirectory = @"C:\InstamRise\Lite\Indirilenler";
         public ContentPage()
@@ -67,26 +71,29 @@ namespace InstamRise_Lite.UserInterface
         {
             if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {
-                ExceptionStatus exception = await LoginAcc.MultiLogin(txtUsername.Text, txtPassword.Text, cmbUsers);
-                if (exception.Exception == "BadPassword")
+                await LoginAcc.MultiLogin(txtUsername.Text, txtPassword.Text, cmbUsers);
+                if (ExceptionStatus.Exception == "BadPassword")
                 {
                     MessageBox.Show("Şifreniz ya da kullanıcı adınız hatalı");
                 }
-                else if (exception.Exception == "Success")
+                else if (ExceptionStatus.Exception == "Success")
                 {
                     MessageBox.Show("Başarıyla giriş yapıldı");
                 }
                 else {
-                    MessageBox.Show(exception.Exception);
+                    MessageBox.Show(ExceptionStatus.Exception);
                 }
             }
-        }
+        }  
 
         private void cmbUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentUserName = cmbUsers.SelectedItem.ToString();
             instaApi = ApiList.FirstOrDefault(api => api.GetLoggedUser().LoggedInUser.UserName.ToLower() == CurrentUserName.ToLower());
         }
+
+
+
         private async void btnUnFollow_Click(object sender, EventArgs e)
         {
             if (cmbUsers.SelectedIndex != -1)
@@ -119,72 +126,7 @@ namespace InstamRise_Lite.UserInterface
 
             }
         }
-        public async Task FollowUser() {
-            bool follow = true;
-            int count = 0;
-            Random random = new Random();
-            if (cmbGetListType.SelectedIndex == 0)
-            {
-                List<InstaProfile> ınstaProfiles = await UserDataProcess.Followers(instaApi, txtListContent.Text);
-                lblGetListCount.Text = "Çekilen yeni kullanıcı sayısı : " + ınstaProfiles.Count.ToString();
-                foreach (var item in ınstaProfiles)
-                {
-                    follow = true;
-                    if (cbFollowPrivateAcc.Checked)
-                    {
-                        if (item.Priv==true)
-                        {
-                            follow = false;
-                        }
-                    }
-                    if (follow)
-                    {
-                        int rndDelay = random.Next((Convert.ToInt32(numberFollowTime.Value)) / 4 * 3, (Convert.ToInt32(numberFollowTime.Value)) * 2);
-                        await Task.Delay(rndDelay * 1000);
-                        if (await UserDataProcess.FollowUsers(instaApi, item.UserID))
-                        {
-                            count++;
-                            lblFollowCount.Text = "Takip Edilen Kullanıcı Sayısı : " + count;
-                            lblFollowUser.Text = "Takip Edilen Kullanıcı : " + item.UserName;
-                        }
-                        else
-                        {
-                            lblUnFollowUser.Text = "Kullanıcı Takip Edilemedi : " + item.UserName;
-                        }
-                    }
-                }
-            }
-            else if (cmbGetListType.SelectedIndex == 1) {
-                List<InstaProfile> ınstaProfiles = await MediaDataProcess.getMediaLikers(instaApi, txtListContent.Text);
-                lblGetListCount.Text = "Çekilen yeni kullanıcı sayısı : " + ınstaProfiles.Count.ToString();
-                foreach (var item in ınstaProfiles)
-                {
-                    follow = true;
-                    if (cbFollowPrivateAcc.Checked)
-                    {
-                        if (item.Priv == true)
-                        {
-                            follow = false;
-                        }
-                    }
-                    if (follow)
-                    {
-                        int rndDelay = random.Next((Convert.ToInt32(numberFollowTime.Value)) / 4 * 3, (Convert.ToInt32(numberFollowTime.Value)) * 2);
-                        await Task.Delay(rndDelay * 1000);
-                        if (await UserDataProcess.FollowUsers(instaApi, item.UserID))
-                        {
-                            count++;
-                            lblFollowCount.Text = "Takip Edilen Kullanıcı Sayısı : " + count;
-                            lblFollowUser.Text = "Takip Edilen Kullanıcı : " + item.UserName;
-                        }
-                        else
-                        {
-                            lblFollowUser.Text = "Kullanıcı Takip Edilemedi : " + item.UserName;
-                        }
-                    }
-                }
-            }
-        }
+        
         public async Task GetMedia() {
 
             if (!Directory.Exists(MediaPathDirectory))
@@ -216,6 +158,7 @@ namespace InstamRise_Lite.UserInterface
             }
             if (!Directory.Exists(imagePath))
                 Directory.CreateDirectory(imagePath);
+
             int videoCount = 0, imageCount = 0;
             foreach (var medias in ınstaMedias)
             {
@@ -274,7 +217,7 @@ namespace InstamRise_Lite.UserInterface
             }
         }
 
-        public async Task PostStory() { 
+        public void PostStory() { 
         
         }
         public string ChoisePicture() {
@@ -293,13 +236,13 @@ namespace InstamRise_Lite.UserInterface
             return returnPath;
         }
 
-        private async void btnFollow_Click(object sender, EventArgs e)
+        private void btnFollow_Click(object sender, EventArgs e)
         {
             if (cmbGetListType.SelectedIndex != -1)
             {
                 if (!string.IsNullOrEmpty(txtListContent.Text))
                 {
-                    await FollowUser();
+                 //   await FollowUser();
                 }
                 else
                 {

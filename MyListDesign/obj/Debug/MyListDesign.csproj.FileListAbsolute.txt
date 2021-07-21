@@ -1,0 +1,6 @@
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\bin\Debug\MyListDesign.dll
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\bin\Debug\MyListDesign.pdb
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\obj\Debug\MyListDesign.csproj.AssemblyReference.cache
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\obj\Debug\MyListDesign.csproj.CoreCompileInputs.cache
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\obj\Debug\MyListDesign.dll
+C:\Users\UGR\source\repos\InstamRise Lite\MyListDesign\obj\Debug\MyListDesign.pdb
