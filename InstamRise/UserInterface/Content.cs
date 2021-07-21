@@ -106,7 +106,11 @@ namespace InstamRise.UserInterface
                         lstShowProcess.Items.Insert(0, DateTime.Now.ToString("HH:mm") + " --> Hesap bulunamadı, giriş bilgileri geçersiz. ");
 
                     }
-                    else {
+                    else if (ExceptionStatus.Exception == "Challenge is required") {
+                        lstShowProcess.Items.Insert(0, DateTime.Now.ToString("HH:mm") + " --> Hesap doğrulamaya düştü. ");
+                    }
+                    else
+                    {
                         MessageBox.Show(ExceptionStatus.Exception);
                     }
                 }
